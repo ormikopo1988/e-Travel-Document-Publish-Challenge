@@ -172,8 +172,6 @@ namespace ETravel.BAL.Services
 
 		}
         
-		public void Dispose() {
-            uow.Dispose();
-        }
+		public void Dispose() {}
 	}
 }

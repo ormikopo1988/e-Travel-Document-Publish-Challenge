@@ -292,9 +292,7 @@ namespace ETravel.BAL.Services
                 response.StatusCode == System.Net.HttpStatusCode.OK ? response.Data : null;
         }
 
-        public void Dispose() {
-            uow.Dispose();
-        }
+        public void Dispose() {}
     }
     
     
