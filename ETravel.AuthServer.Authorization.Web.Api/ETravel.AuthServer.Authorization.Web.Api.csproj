@@ -207,8 +207,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\PublishProfiles\Viva5AuthServer - Web Deploy %282%29.pubxml" />
-    <None Include="Properties\PublishProfiles\viva5AuthServer - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

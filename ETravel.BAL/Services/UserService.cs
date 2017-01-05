@@ -146,7 +146,11 @@ namespace ETravel.BAL.Services
 				_user.UpdatedDateTime = DateTime.Now;
 				_user.Name = source.Name;
 				_user.ShortBio = source.ShortBio;
-				_user.AvatarImage = source.AvatarImage;
+
+                if (source.AvatarImage == "")
+                    _user.AvatarImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSODALYDYo2dqN0DG_kPNi2X7EAy1K8SpRRZQWkNv9alC62IHggOw";
+                else
+                    _user.AvatarImage = source.AvatarImage;
 
 				uow.UserRepository.Update(_user, true);
 				
@@ -171,12 +175,5 @@ namespace ETravel.BAL.Services
 		public void Dispose() {
             uow.Dispose();
         }
-
-		public enum StatusCodes
-		{
-			NOT_FOUND = 0,
-			NOT_AUTHORIZED = 1,
-			OK = 2
-		};
 	}
 }

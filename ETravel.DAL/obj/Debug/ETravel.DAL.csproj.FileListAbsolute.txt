@@ -11,3 +11,16 @@ C:\Users\ormikopo\Desktop\e-travel-project\ETravel.Server.Web.Api\ETravel.DAL\bi
 C:\Users\ormikopo\Desktop\e-travel-project\ETravel.Server.Web.Api\ETravel.DAL\obj\Debug\ETravel.DAL.csprojResolveAssemblyReference.cache
 C:\Users\ormikopo\Desktop\e-travel-project\ETravel.Server.Web.Api\ETravel.DAL\obj\Debug\VivaWallet.DAL.dll
 C:\Users\ormikopo\Desktop\e-travel-project\ETravel.Server.Web.Api\ETravel.DAL\obj\Debug\VivaWallet.DAL.pdb
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\VivaWallet.DAL.dll.config
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\VivaWallet.DAL.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\VivaWallet.DAL.pdb
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\EntityFramework.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\EntityFramework.SqlServerCompact.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\System.Data.SqlServerCe.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\EntityFramework.xml
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\bin\Debug\EntityFramework.SqlServerCompact.xml
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\obj\Debug\ETravel.DAL.csprojResolveAssemblyReference.cache
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\obj\Debug\VivaWallet.DAL.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.DAL\obj\Debug\VivaWallet.DAL.pdb
