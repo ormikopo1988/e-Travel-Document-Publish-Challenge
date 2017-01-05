@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="538ed7a65a7a4e5e94ba941e50b302dd" Name="Diagram1">
+        <EntityTypeShape EntityType="ETravelModel.Attachment" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETravelModel.AttachmentSet" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ETravelModel.User" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="ETravelModel.FK__Attachmen__Attac__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="ETravelModel.FK__Users__Attachmen__48CFD27E" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

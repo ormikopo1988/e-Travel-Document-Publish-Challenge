@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ETravelModelStoreContainer" CdmEntityContainer="ETravelEntities">
+    <EntitySetMapping Name="Attachments">
+      <EntityTypeMapping TypeName="ETravelModel.Attachment">
+        <MappingFragment StoreEntitySet="Attachments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="AttachmentSetId" ColumnName="AttachmentSetId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="FileId" ColumnName="FileId" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="HtmlCode" ColumnName="HtmlCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttachmentSets">
+      <EntityTypeMapping TypeName="ETravelModel.AttachmentSet">
+        <MappingFragment StoreEntitySet="AttachmentSets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="ETravelModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="UpdatedDateTime" ColumnName="UpdatedDateTime" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="AttachmentSetId" ColumnName="AttachmentSetId" />
+          <ScalarProperty Name="ShortBio" ColumnName="ShortBio" />
+          <ScalarProperty Name="AvatarImage" ColumnName="AvatarImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestDb_thModelStoreContainer" CdmEntityContainer="VivaWalletEntities">
+    <EntitySetMapping Name="Attachments">
+      <EntityTypeMapping TypeName="TestDb_thModel.Attachment">
+        <MappingFragment StoreEntitySet="Attachments">
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="AttachementSetId" ColumnName="AttachementSetId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Caption" ColumnName="Caption" />
+          <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+          <ScalarProperty Name="HtmlCode" ColumnName="HtmlCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AttachmentSets">
+      <EntityTypeMapping TypeName="TestDb_thModel.AttachmentSet">
+        <MappingFragment StoreEntitySet="AttachmentSets">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="IsUsed" ColumnName="IsUsed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FundingPackages">
+      <EntityTypeMapping TypeName="TestDb_thModel.FundingPackage">
+        <MappingFragment StoreEntitySet="FundingPackages">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="AttachmentSetId" ColumnName="AttachmentSetId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PledgeAmount" ColumnName="PledgeAmount" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="WhenDateTime" ColumnName="WhenDateTime" />
+          <ScalarProperty Name="EstimatedDeliveryDate" ColumnName="EstimatedDeliveryDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectCategories">
+      <EntityTypeMapping TypeName="TestDb_thModel.ProjectCategory">
+        <MappingFragment StoreEntitySet="ProjectCategories">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectComments">
+      <EntityTypeMapping TypeName="TestDb_thModel.ProjectComment">
+        <MappingFragment StoreEntitySet="ProjectComments">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="AttachmentSetId" ColumnName="AttachmentSetId" />
+          <ScalarProperty Name="WhenDateTime" ColumnName="WhenDateTime" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectExternalShares">
+      <EntityTypeMapping TypeName="TestDb_thModel.ProjectExternalShare">
+        <MappingFragment StoreEntitySet="ProjectExternalShares">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Target" ColumnName="Target" />
+          <ScalarProperty Name="Source" ColumnName="Source" />
+          <ScalarProperty Name="WhenDateTime" ColumnName="WhenDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="TestDb_thModel.Project">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ProjectCategoryId" ColumnName="ProjectCategoryId" />
+          <ScalarProperty Name="AttachmentSetId" ColumnName="AttachmentSetId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+          <ScalarProperty Name="FundingEndDate" ColumnName="FundingEndDate" />
+          <ScalarProperty Name="FundingGoal" ColumnName="FundingGoal" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectStats">
+      <EntityTypeMapping TypeName="TestDb_thModel.ProjectStat">
+        <MappingFragment StoreEntitySet="ProjectStats">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="BackersNo" ColumnName="BackersNo" />
+          <ScalarProperty Name="MoneyPledged" ColumnName="MoneyPledged" />
+          <ScalarProperty Name="SharesNo" ColumnName="SharesNo" />
+          <ScalarProperty Name="CommentsNo" ColumnName="CommentsNo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectUpdates">
+      <EntityTypeMapping TypeName="TestDb_thModel.ProjectUpdate">
+        <MappingFragment StoreEntitySet="ProjectUpdates">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+          <ScalarProperty Name="AttachmentSetId" ColumnName="AttachmentSetId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="WhenDateTime" ColumnName="WhenDateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserFundings">
+      <EntityTypeMapping TypeName="TestDb_thModel.UserFunding">
+        <MappingFragment StoreEntitySet="UserFundings">
+          <ScalarProperty Name="TransactionId" ColumnName="TransactionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="FundingPackageId" ColumnName="FundingPackageId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="WhenDateTime" ColumnName="WhenDateTime" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="TestDb_thModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="IsVerified" ColumnName="IsVerified" />
+          <ScalarProperty Name="VerificationToken" ColumnName="VerificationToken" />
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="UpdateDateTime" ColumnName="UpdateDateTime" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ShortBio" ColumnName="ShortBio" />
+          <ScalarProperty Name="AvatarImage" ColumnName="AvatarImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,1 @@
+C:\Users\ormikopo\Desktop\e-travel-project\ETravel.Server.Web.Api\E.Travel.BAL\obj\Debug\E.Travel.BAL.csprojResolveAssemblyReference.cache

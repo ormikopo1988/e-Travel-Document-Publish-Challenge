@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ETravelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Attachments">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="AttachmentSetId" Type="bigint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+    <Property Name="OrderNo" Type="int" Nullable="false" />
+    <Property Name="FileId" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Url" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="MimeType" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Caption" Type="nvarchar" MaxLength="255" />
+    <Property Name="HtmlCode" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="AttachmentSets">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDateTime" Type="datetime" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="AttachmentSetId" Type="bigint" Nullable="false" />
+    <Property Name="ShortBio" Type="nvarchar" MaxLength="1000" />
+    <Property Name="AvatarImage" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <Association Name="FK__Attachmen__Attac__4E88ABD4">
+    <End Role="AttachmentSets" Type="Self.AttachmentSets" Multiplicity="1" />
+    <End Role="Attachments" Type="Self.Attachments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttachmentSets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Attachments">
+        <PropertyRef Name="AttachmentSetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__Attachmen__48CFD27E">
+    <End Role="AttachmentSets" Type="Self.AttachmentSets" Multiplicity="1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AttachmentSets">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="AttachmentSetId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ETravelModelStoreContainer">
+    <EntitySet Name="Attachments" EntityType="Self.Attachments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AttachmentSets" EntityType="Self.AttachmentSets" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Attachmen__Attac__4E88ABD4" Association="Self.FK__Attachmen__Attac__4E88ABD4">
+      <End Role="AttachmentSets" EntitySet="AttachmentSets" />
+      <End Role="Attachments" EntitySet="Attachments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__Attachmen__48CFD27E" Association="Self.FK__Users__Attachmen__48CFD27E">
+      <End Role="AttachmentSets" EntitySet="AttachmentSets" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
