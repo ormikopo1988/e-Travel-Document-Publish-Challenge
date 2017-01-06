@@ -60,6 +60,7 @@ namespace ETravel.Server.Web.Api.Controllers
             }
         }
 
+        //DOWNLOAD ATTACHMENT FROM AWS SERVICE - OK
         [HttpGet]
         [Route("{attachmentId}")]
         public async Task<HttpResponseMessage> DownloadAttachment(long attachmentId)
@@ -101,6 +102,7 @@ namespace ETravel.Server.Web.Api.Controllers
             }
         }
 
+        //DELETE USER ATTACHMENT - OK
         [Route("{attachmentId}")]
         [HttpDelete] 
         public async Task<HttpResponseMessage> DeleteAttachment(long attachmentId)
