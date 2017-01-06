@@ -50,6 +50,9 @@ namespace ETravel.Server.Web.Api.Controllers
             {
                 var v = s.GetUser((int)requestorUserId);
 
+                if (v == null)
+                    return Request.CreateResponse(HttpStatusCode.NotFound);
+
                 return Request.CreateResponse(HttpStatusCode.OK, v);
             }
         }
@@ -82,10 +85,8 @@ namespace ETravel.Server.Web.Api.Controllers
                 var v = s.GetUser(userId);
 
                 if (v == null)
-                {
                     return Request.CreateResponse(HttpStatusCode.NotFound);
-                }
-
+                
                 return Request.CreateResponse(HttpStatusCode.OK, v);
             }
         }
@@ -103,10 +104,8 @@ namespace ETravel.Server.Web.Api.Controllers
                 var v = s.GetUserByUsername(user.Username);
 
                 if (v == null)
-                {
                     return Request.CreateResponse(HttpStatusCode.NotFound);
-                }
-
+                
                 return Request.CreateResponse(HttpStatusCode.OK, v);
             }
         }

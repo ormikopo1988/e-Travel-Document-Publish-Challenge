@@ -15,12 +15,13 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
     public class UsersControllerTests
     {
         private UsersController _usersController;
+        private Mock<IRepository<User>> _mockRepository;
 
         public UsersControllerTests()
         {
-            var mockRepository = new Mock<IRepository<User>>();
+            _mockRepository = new Mock<IRepository<User>>();
             var mockUnitOfWork = new Mock<IUnitOfWork>();
-            mockUnitOfWork.SetupGet(u => u.UserRepository).Returns(mockRepository.Object);
+            mockUnitOfWork.SetupGet(u => u.UserRepository).Returns(_mockRepository.Object);
 
 
             _usersController = new UsersController();
@@ -132,7 +133,7 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
         {
             //Arrange
             var config = new HttpConfiguration();
-            var request = new HttpRequestMessage(HttpMethod.Get, "http://etravelwebapi.azurewebsites.net/getAllUsersByName/null");
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://etravelwebapi.azurewebsites.net/api/users/getAllUsersByName/null");
             var route = config.Routes.MapHttpRoute("Default", "api/{controller}/{id}");
             var controller = new UsersController
             {
@@ -152,7 +153,7 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
         {
             //Arrange
             var config = new HttpConfiguration();
-            var request = new HttpRequestMessage(HttpMethod.Get, "http://etravelwebapi.azurewebsites.net/getAllUsersByName/or");
+            var request = new HttpRequestMessage(HttpMethod.Get, "http://etravelwebapi.azurewebsites.net/api/users/getAllUsersByName/or");
             var route = config.Routes.MapHttpRoute("Default", "api/{controller}/{id}");
             var controller = new UsersController
             {
@@ -166,5 +167,6 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
         }
+        
     }
 }
