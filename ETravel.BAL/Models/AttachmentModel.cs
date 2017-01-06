@@ -9,19 +9,19 @@ namespace ETravel.BAL.Models
 
         public long? AttachmentSetId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Name for the attachment is required")]
         public string Name { get; set; }
 
         public DateTime? CreatedDateTime { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Order number for the attachment is required")]
         public int OrderNo { get; set; }
 
         public string FileId { get; set; }
 
         public string Url { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Mime type for the attachment is required")]
         public string MimeType { get; set; }
 
         public string Caption { get; set; }

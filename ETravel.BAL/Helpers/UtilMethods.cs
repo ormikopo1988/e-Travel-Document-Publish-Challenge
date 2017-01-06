@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace ETravel.BAL.Helpers
@@ -21,21 +20,7 @@ namespace ETravel.BAL.Helpers
                 throw new InvalidOperationException("User lookup for current logged in User Id failed", ex);
             }
         }
-
-        public static IEnumerable<TSource> 
-            DistinctBy<TSource, TKey>
-            (IEnumerable<TSource> source, Func<TSource, TKey> keySelector)
-        {
-            HashSet<TKey> seenKeys = new HashSet<TKey>();
-            foreach (TSource element in source)
-            {
-                if (seenKeys.Add(keySelector(element)))
-                {
-                    yield return element;
-                }
-            }
-        }
-
+        
         public enum StatusCodes
         {
             NOT_FOUND = 0,
