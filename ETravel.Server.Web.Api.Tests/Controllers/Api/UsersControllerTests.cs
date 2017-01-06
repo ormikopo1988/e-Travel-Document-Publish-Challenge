@@ -1,5 +1,4 @@
 ﻿using ETravel.BAL;
-using ETravel.BAL.Models;
 using ETravel.DAL;
 using ETravel.Server.Web.Api.Controllers;
 using ETravel.Server.Web.Api.Tests.Extensions;
@@ -21,19 +20,26 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
         private Mock<IRepository<User>> _mockRepository;
         private string _currentUserId;
 
-        private UsersController controller;
+        private UsersController _controller;
+        private HttpRequestMessage _request;
 
-        private void InitUserController(string requestUri, HttpMethod method)
+        private void InitUserController(string requestUri, HttpMethod method, bool allowAnonymous = true, string username = null)
         {
             var config = new HttpConfiguration();
-            var request = new HttpRequestMessage(method, requestUri);
+            _request = new HttpRequestMessage(method, requestUri);
             var route = config.Routes.MapHttpRoute("Default", "api/{controller}/{id}");
 
-            controller = new UsersController
+            if(!allowAnonymous)
             {
-                Request = request,
+                var identity = new GenericIdentity(username);
+                Thread.CurrentPrincipal = new GenericPrincipal(identity, null);
+            }
+
+            _controller = new UsersController
+            {
+                Request = _request,
             };
-            controller.Request.Properties[HttpPropertyKeys.HttpConfigurationKey] = config;
+            _controller.Request.Properties[HttpPropertyKeys.HttpConfigurationKey] = config;
 
         }
         
@@ -58,7 +64,7 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
             InitUserController("http://etravelwebapi.azurewebsites.net/api/users/0", HttpMethod.Get);
             
             //Act
-            var result = controller.GetUser(0);
+            var result = _controller.GetUser(0);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.BadRequest, result.StatusCode);
@@ -71,7 +77,7 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
             InitUserController("http://etravelwebapi.azurewebsites.net/api/users/1337", HttpMethod.Get);
             
             //Act
-            var result = controller.GetUser(155);
+            var result = _controller.GetUser(155);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode);
@@ -84,7 +90,7 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
             InitUserController("http://etravelwebapi.azurewebsites.net/api/users/1", HttpMethod.Get);
             
             //Act
-            var result = controller.GetUser(1);
+            var result = _controller.GetUser(1);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
@@ -97,7 +103,7 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
             InitUserController("http://etravelwebapi.azurewebsites.net/api/users", HttpMethod.Get);
 
             //Act
-            var result = controller.GetAllUsers();
+            var result = _controller.GetAllUsers();
 
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
@@ -110,7 +116,7 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
             InitUserController("http://etravelwebapi.azurewebsites.net/api/users/lastTen", HttpMethod.Get);
             
             //Act
-            var result = controller.GetLastTenRegisteredUsers();
+            var result = _controller.GetLastTenRegisteredUsers();
 
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
@@ -123,7 +129,7 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
             InitUserController("http://etravelwebapi.azurewebsites.net/api/users/getAllUsersByName/null", HttpMethod.Get);
             
             //Act
-            var result = controller.GetAllUsersByName(null);
+            var result = _controller.GetAllUsersByName(null);
 
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.BadRequest, result.StatusCode);
@@ -136,7 +142,7 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
             InitUserController("http://etravelwebapi.azurewebsites.net/api/users/getAllUsersByName/or", HttpMethod.Get);
             
             //Act
-            var result = controller.GetAllUsersByName("or");
+            var result = _controller.GetAllUsersByName("or");
 
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
@@ -146,13 +152,10 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
         public void GetCurrentUserInfo_CurrentUserNotFound_ShouldReturnNotFound()
         {
             //Arrange
-            InitUserController("http://etravelwebapi.azurewebsites.net/api/users/getCurrentUserInfo", HttpMethod.Get);
-
-            var identity = new GenericIdentity("testUser");
-            Thread.CurrentPrincipal = new GenericPrincipal(identity, null);
+            InitUserController("http://etravelwebapi.azurewebsites.net/api/users/getCurrentUserInfo", HttpMethod.Get, false, "testUser");
             
             //Act
-            var result = controller.GetCurrentUserInfo();
+            var result = _controller.GetCurrentUserInfo();
 
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.NotFound, result.StatusCode);
@@ -162,45 +165,14 @@ namespace ETravel.Server.Web.Api.Tests.Controllers.Api
         public void GetCurrentUserInfo_CurrentUserFound_ShouldReturnOk()
         {
             //Arrange
-            var config = new HttpConfiguration();
-            var request = new HttpRequestMessage(HttpMethod.Get, "http://etravelwebapi.azurewebsites.net/api/users/getCurrentUserInfo");
-            var route = config.Routes.MapHttpRoute("Default", "api/{controller}/{id}");
-
-            var identity = new GenericIdentity("orme@ait.gr");
-            Thread.CurrentPrincipal = new GenericPrincipal(identity, null);
-
-            var controller = new UsersController
-            {
-                Request = request,
-            };
-            controller.Request.Properties[HttpPropertyKeys.HttpConfigurationKey] = config;
-
+            InitUserController("http://etravelwebapi.azurewebsites.net/api/users/getCurrentUserInfo", HttpMethod.Get, false, "orme@ait.gr");
+            
             //Act
-            var result = controller.GetCurrentUserInfo();
+            var result = _controller.GetCurrentUserInfo();
 
             Assert.IsNotNull(result);
             Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
         }
-
-        [TestMethod]
-        public void UpdateUserMainInfo_UserModelGivenNotValid_ShouldReturnBadRequest()
-        {
-            //Arrange
-            InitUserController("http://etravelwebapi.azurewebsites.net/api/users", HttpMethod.Put);
-            
-            var identity = new GenericIdentity("orme@ait.gr");
-            Thread.CurrentPrincipal = new GenericPrincipal(identity, null);
-            
-            var userModel = new UserModel();
-
-            //request = userModel;
-
-            //Act
-            var result = controller.GetCurrentUserInfo();
-
-            Assert.IsNotNull(result);
-            Assert.AreEqual(HttpStatusCode.OK, result.StatusCode);
-        }
-
+        
     }
 }
