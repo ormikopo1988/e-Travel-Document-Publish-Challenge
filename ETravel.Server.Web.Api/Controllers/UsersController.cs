@@ -13,11 +13,18 @@ namespace ETravel.Server.Web.Api.Controllers
     [RoutePrefix("api/users")]
     public class UsersController : ApiController
     {
-        private IUnitOfWork uow;
+        private readonly IUnitOfWork _uow;
+
         public UsersController()
         {
-            uow = new UnitOfWork();
+            _uow = new UnitOfWork();
         }
+
+        public UsersController(IUnitOfWork uow)
+        {
+            _uow = uow;
+        }
+
         /*
          *  
          * USER ROUTES
@@ -30,7 +37,7 @@ namespace ETravel.Server.Web.Api.Controllers
         [Route("")]
         public HttpResponseMessage GetAllUsers()
         {
-            using (var s = new UserService(uow))
+            using (var s = new UserService(_uow))
             {
                 var v = s.GetAllUsers();
 
@@ -44,9 +51,9 @@ namespace ETravel.Server.Web.Api.Controllers
         public HttpResponseMessage GetCurrentUserInfo()
         {
             var identity = User.Identity as ClaimsIdentity;
-            long requestorUserId = UtilMethods.GetCurrentUserId(uow, identity.Name);
+            long requestorUserId = UtilMethods.GetCurrentUserId(_uow, identity.Name);
 
-            using (var s = new UserService(uow))
+            using (var s = new UserService(_uow))
             {
                 var v = s.GetUser((int)requestorUserId);
 
@@ -63,7 +70,7 @@ namespace ETravel.Server.Web.Api.Controllers
         [Route("lastTen")]
         public HttpResponseMessage GetLastTenRegisteredUsers()
         {
-            using (var s = new UserService(uow))
+            using (var s = new UserService(_uow))
             {
                 var v = s.GetLastTenRegisteredUsers();
 
@@ -80,7 +87,7 @@ namespace ETravel.Server.Web.Api.Controllers
             if (userId <= 0)
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
 
-            using (var s = new UserService(uow))
+            using (var s = new UserService(_uow))
             {
                 var v = s.GetUser(userId);
 
@@ -99,7 +106,7 @@ namespace ETravel.Server.Web.Api.Controllers
             if (!ModelState.IsValid)
                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
 
-            using (var s = new UserService(uow))
+            using (var s = new UserService(_uow))
             {
                 var v = s.GetUserByUsername(user.Username);
 
@@ -120,7 +127,7 @@ namespace ETravel.Server.Web.Api.Controllers
 
             var identity = User.Identity as ClaimsIdentity;
 
-            using (var s = new UserService(uow))
+            using (var s = new UserService(_uow))
             {
                 var httpStatusCode = HttpStatusCode.OK;
 
@@ -152,7 +159,7 @@ namespace ETravel.Server.Web.Api.Controllers
             if (searchTerm == null)
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
 
-            using (var s = new UserService(uow))
+            using (var s = new UserService(_uow))
             {
                 var v = s.GetByName(searchTerm);
 

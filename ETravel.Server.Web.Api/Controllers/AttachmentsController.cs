@@ -15,11 +15,16 @@ namespace ETravel.Server.Web.Api.Controllers
     [RoutePrefix("api/attachments")]
     public class AttachmentsController : ApiController
     {
-        protected IUnitOfWork uow;
+        private readonly IUnitOfWork _uow;
 
         public AttachmentsController()
         {
-            uow = new UnitOfWork();
+            _uow = new UnitOfWork();
+        }
+
+        public AttachmentsController(IUnitOfWork uow)
+        {
+            _uow = uow;
         }
 
         //GET CURRENT LOGGED IN USER UPLOADED ATTACHMENTS - OK
@@ -29,7 +34,7 @@ namespace ETravel.Server.Web.Api.Controllers
         {
             var identity = User.Identity as ClaimsIdentity;
 
-            using (var s = new AttachmentService(uow))
+            using (var s = new AttachmentService(_uow))
             {
                 var v = s.GetUserAttachments(identity);
 
@@ -47,7 +52,7 @@ namespace ETravel.Server.Web.Api.Controllers
 
             var identity = User.Identity as ClaimsIdentity;
 
-            using (var s = new AttachmentService(uow))
+            using (var s = new AttachmentService(_uow))
             {
                 long newAttachmentId = await s.SaveAttachment(identity.Name, attachment);
                 
@@ -68,7 +73,7 @@ namespace ETravel.Server.Web.Api.Controllers
 
                 var result = UtilMethods.StatusCodes.OK;
 
-                using (var repo = new AttachmentService(uow))
+                using (var repo = new AttachmentService(_uow))
                 {
                     result = await repo.DownloadAttachment(identity.Name, attachmentId);
                 }
@@ -109,7 +114,7 @@ namespace ETravel.Server.Web.Api.Controllers
 
                 var result = UtilMethods.StatusCodes.OK;
 
-                using (var repo = new AttachmentService(uow))
+                using (var repo = new AttachmentService(_uow))
                 {
                     result = await repo.DeleteAttachment(identity.Name, attachmentId);
                 }
@@ -147,7 +152,7 @@ namespace ETravel.Server.Web.Api.Controllers
 
             var identity = User.Identity as ClaimsIdentity;
 
-            using (var pr = new AttachmentService(uow))
+            using (var pr = new AttachmentService(_uow))
             {
                 var v = pr.IsCurrentUserAuthorized(attachmentId, "ATTACHMENT", identity);
 
