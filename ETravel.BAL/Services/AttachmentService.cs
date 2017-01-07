@@ -92,6 +92,9 @@ namespace ETravel.BAL.Services
                     throw new InvalidOperationException("User lookup failed", ex);
                 }
 
+                if (_user == null)
+                    return new List<AttachmentModel>();
+
                 var attachmentList = uow.AttachmentRepository
                                         .SearchFor(e => e.AttachmentSetId == _user.AttachmentSetId)
                                         .Select(e => new AttachmentModel()
@@ -196,9 +199,10 @@ namespace ETravel.BAL.Services
         // OK
         public AuthorizationModel IsCurrentUserAuthorized(int targetId, string targetType, string username)
         {
-            long requestorUserId = UtilMethods.GetCurrentUserId(uow, username);
+            var currentUser = uow.UserRepository.SearchFor(e => e.Username == username).FirstOrDefault();
 
-            var currentUser = uow.UserRepository.FindById(requestorUserId);
+            if (currentUser == null)
+                return null;
 
             try
             {
@@ -216,7 +220,7 @@ namespace ETravel.BAL.Services
                             return null;
                         }
 
-                        _authModel.RequestorId = requestorUserId;
+                        _authModel.RequestorId = currentUser.Id;
                         _authModel.TargetId = targetId;
                         _authModel.TargetType = "ATTACHMENT";
 
