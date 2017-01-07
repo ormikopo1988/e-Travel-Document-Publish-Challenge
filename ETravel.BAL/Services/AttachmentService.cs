@@ -7,7 +7,6 @@ using RestSharp;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -76,7 +75,7 @@ namespace ETravel.BAL.Services
 
         }
         
-        public IList<AttachmentModel> GetUserAttachments(ClaimsIdentity identity)
+        public IList<AttachmentModel> GetUserAttachments(string username)
         {
             try
             {
@@ -85,7 +84,7 @@ namespace ETravel.BAL.Services
                 try
                 {
                     _user = uow.UserRepository
-                               .SearchFor(e => e.Username == identity.Name)
+                               .SearchFor(e => e.Username == username)
                                .SingleOrDefault();
                 }
                 catch (InvalidOperationException ex)
@@ -124,12 +123,7 @@ namespace ETravel.BAL.Services
         {
             try
             {
-                var user = uow.UserRepository.SearchFor(e => e.Username == username).SingleOrDefault();
-
-                if (user == null)
-                {
-                    throw new UnauthorizedAccessException("User does not exists");
-                }
+                long requestorUserId = UtilMethods.GetCurrentUserId(uow, username);
 
                 var attachmentToDownload = uow.AttachmentRepository.FindById(attachmentId);
 
@@ -140,7 +134,7 @@ namespace ETravel.BAL.Services
                                         .SearchFor(e => e.AttachmentSetId == attachmentToDownload.AttachmentSetId)
                                         .FirstOrDefault();
 
-                    if (userOwner != null && user.Id == userOwner.Id)
+                    if (userOwner != null && requestorUserId == userOwner.Id)
                     {
                         var document = await DownloadAttachmentFromService(attachmentToDownload);
                         return UtilMethods.StatusCodes.OK;
@@ -166,13 +160,8 @@ namespace ETravel.BAL.Services
         {
             try
             {
-                var user = uow.UserRepository.SearchFor(e => e.Username == username).SingleOrDefault();
-
-                if(user == null)
-                {
-                    throw new UnauthorizedAccessException("User does not exists");
-                }
-
+                long requestorUserId = UtilMethods.GetCurrentUserId(uow, username);
+                
                 var attachmentToDelete = uow.AttachmentRepository.FindById(attachmentId);
 
                 if(attachmentToDelete != null)
@@ -182,7 +171,7 @@ namespace ETravel.BAL.Services
                                         .SearchFor(e => e.AttachmentSetId == attachmentToDelete.AttachmentSetId)
                                         .FirstOrDefault();
 
-                    if (userOwner != null &&  user.Id == userOwner.Id)
+                    if (userOwner != null && requestorUserId == userOwner.Id)
                     {
                         await uow.AttachmentRepository.DeleteAsync(attachmentToDelete ,true);
                         return UtilMethods.StatusCodes.OK;
@@ -205,9 +194,9 @@ namespace ETravel.BAL.Services
         }
         
         // OK
-        public AuthorizationModel IsCurrentUserAuthorized(int targetId, string targetType, ClaimsIdentity identity)
+        public AuthorizationModel IsCurrentUserAuthorized(int targetId, string targetType, string username)
         {
-            long requestorUserId = UtilMethods.GetCurrentUserId(uow, identity.Name);
+            long requestorUserId = UtilMethods.GetCurrentUserId(uow, username);
 
             var currentUser = uow.UserRepository.FindById(requestorUserId);
 

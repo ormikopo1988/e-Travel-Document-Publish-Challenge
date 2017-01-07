@@ -36,7 +36,7 @@ namespace ETravel.Server.Web.Api.Controllers
 
             using (var s = new AttachmentService(_uow))
             {
-                var v = s.GetUserAttachments(identity);
+                var v = s.GetUserAttachments(identity.Name);
 
                 return Request.CreateResponse(HttpStatusCode.OK, v);
             }
@@ -156,7 +156,7 @@ namespace ETravel.Server.Web.Api.Controllers
 
             using (var pr = new AttachmentService(_uow))
             {
-                var v = pr.IsCurrentUserAuthorized(attachmentId, "ATTACHMENT", identity);
+                var v = pr.IsCurrentUserAuthorized(attachmentId, "ATTACHMENT", identity.Name);
 
                 if (v == null)
                     return Request.CreateResponse(HttpStatusCode.NotFound);

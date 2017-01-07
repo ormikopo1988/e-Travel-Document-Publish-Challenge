@@ -89,5 +89,28 @@ namespace ETravel.Server.Web.Api.Tests.Services
 
             user.Should().NotBeNull();
         }
+
+        [TestMethod]
+        public void GetByName_ΝameNotExists_ShouldReturnEmptyList()
+        {
+            //Arrange
+
+            //Act
+            var users = _userService.GetByName("111111111");
+
+            users.Should().NotBeNull().And.BeEmpty();
+        }
+
+        [TestMethod]
+        public void GetByName_NameExists_ShouldReturnOneOrMoreUsers()
+        {
+            //Arrange
+
+            //Act
+            var users = _userService.GetByName("or");
+
+            users.Should().NotBeNull().And.NotBeEmpty();
+            users.Should().HaveCount(c => c >= 1).And.OnlyHaveUniqueItems();
+        }
     }
 }
