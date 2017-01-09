@@ -82,6 +82,10 @@
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ETravel.Common\ETravel.Common.csproj">
+      <Project>{4b21794a-2edd-4694-9a3b-cace54f07f54}</Project>
+      <Name>ETravel.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ETravel.DAL\ETravel.DAL.csproj">
       <Project>{639072b3-7206-4939-bc10-39c3a3d64aa0}</Project>
       <Name>ETravel.DAL</Name>

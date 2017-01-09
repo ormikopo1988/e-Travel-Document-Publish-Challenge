@@ -99,6 +99,7 @@ C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\E
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\VivaWallet.Server.Web.Api.Tests.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\EntityFramework.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\ETravel.Common.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\FluentAssertions.Core.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\FluentAssertions.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\Moq.dll
@@ -120,6 +121,7 @@ C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\E
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\Microsoft.Owin.Cors.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\Microsoft.Owin.Security.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\Viva.Wallet.BAL.pdb
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\ETravel.Common.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\VivaWallet.DAL.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\VivaWallet.Server.Web.Api.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api.Tests\bin\Debug\EntityFramework.xml

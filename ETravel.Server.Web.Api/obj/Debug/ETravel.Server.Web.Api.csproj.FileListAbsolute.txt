@@ -148,6 +148,7 @@ C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\E
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\System.Web.Http.Owin.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\System.Web.Http.WebHost.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\Viva.Wallet.BAL.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\ETravel.Common.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\VivaWallet.DAL.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\AWSSDK.SimpleNotificationService.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\RestSharp.dll
@@ -175,6 +176,7 @@ C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\E
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\System.Net.Http.Formatting.xml
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\System.Web.Http.xml
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\System.Web.Http.WebHost.xml
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\ETravel.Common.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\VivaWallet.DAL.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\AWSSDK.SimpleNotificationService.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Server.Web.Api\bin\AWSSDK.SimpleNotificationService.xml

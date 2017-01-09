@@ -27,9 +27,11 @@ C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\E
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\AWSSDK.SimpleNotificationService.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\EntityFramework.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\ETravel.Common.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\Newtonsoft.Json.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\RestSharp.dll
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\VivaWallet.DAL.dll
+C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\ETravel.Common.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\VivaWallet.DAL.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\AWSSDK.Core.pdb
 C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.BAL\bin\Debug\AWSSDK.Core.xml
