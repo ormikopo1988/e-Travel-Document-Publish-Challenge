@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A204A287-8218-46CC-8713-8CF383866D65}</ProjectGuid>
+    <ProjectGuid>{3CE1D93C-D6B0-492E-97CF-F64F1C8C9743}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ETravel.Common.Tests</RootNamespace>
@@ -59,7 +59,7 @@
       <Name>ETravel.BAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ETravel.Common\ETravel.Common.csproj">
-      <Project>{4b21794a-2edd-4694-9a3b-cace54f07f54}</Project>
+      <Project>{c17e5df2-23e4-4a7c-8271-d17c007c9aba}</Project>
       <Name>ETravel.Common</Name>
     </ProjectReference>
   </ItemGroup>

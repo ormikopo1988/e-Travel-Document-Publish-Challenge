@@ -6,8 +6,8 @@
     <ProjectGuid>{C2853E0E-7BB9-4D11-B0A1-E5CC5930D499}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VivaWallet.Server.Web.Api.Tests</RootNamespace>
-    <AssemblyName>VivaWallet.Server.Web.Api.Tests</AssemblyName>
+    <RootNamespace>ETravel.Server.Web.Api.Tests</RootNamespace>
+    <AssemblyName>ETravel.Server.Web.Api.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -101,7 +101,7 @@
       <Name>ETravel.BAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ETravel.Common\ETravel.Common.csproj">
-      <Project>{4B21794A-2EDD-4694-9A3B-CACE54F07F54}</Project>
+      <Project>{C17E5DF2-23E4-4A7C-8271-D17C007C9ABA}</Project>
       <Name>ETravel.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ETravel.DAL\ETravel.DAL.csproj">

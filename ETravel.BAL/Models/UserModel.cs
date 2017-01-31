@@ -11,7 +11,7 @@ namespace ETravel.BAL.Models
 
         [Required(ErrorMessage = "User email is required")]
         public string Username { get; set; }
-        
+
         public DateTime CreatedDateTime { get; set; }
 
         public DateTime UpdatedDateTime { get; set; }

@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4B21794A-2EDD-4694-9A3B-CACE54F07F54}</ProjectGuid>
+    <ProjectGuid>{C17E5DF2-23E4-4A7C-8271-D17C007C9ABA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ETravel.Common</RootNamespace>

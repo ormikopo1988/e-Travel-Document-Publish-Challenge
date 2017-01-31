@@ -7,8 +7,8 @@
     <ProjectGuid>{8265A147-C808-458C-933C-FE80304C4A31}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Viva.Wallet.BAL</RootNamespace>
-    <AssemblyName>Viva.Wallet.BAL</AssemblyName>
+    <RootNamespace>ETravel.BAL</RootNamespace>
+    <AssemblyName>ETravel.BAL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -83,7 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ETravel.Common\ETravel.Common.csproj">
-      <Project>{4b21794a-2edd-4694-9a3b-cace54f07f54}</Project>
+      <Project>{c17e5df2-23e4-4a7c-8271-d17c007c9aba}</Project>
       <Name>ETravel.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\ETravel.DAL\ETravel.DAL.csproj">

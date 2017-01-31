@@ -40,7 +40,7 @@ namespace ETravel.Common.Tests
             changedItems.Add(snsMessageModel);
 
             //Act
-            LoggingService.WriteToFile(changedItems);
+            LoggingService.WriteToConsole(changedItems);
 
             //Assert 
             //Nothing to assert

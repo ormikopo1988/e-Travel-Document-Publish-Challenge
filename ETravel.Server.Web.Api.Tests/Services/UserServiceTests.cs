@@ -14,11 +14,18 @@ namespace ETravel.Server.Web.Api.Tests.Services
         private UserService _userService;
 
         private Mock<DbSet<User>> _mockUsers;
+
+        private Mock<IEtravelEntities> _mockContext;
         
         [TestInitialize]
         public void TestInitialize()
         {
             _mockUsers = new Mock<DbSet<User>>();
+
+            _mockContext = new Mock<IEtravelEntities>();
+
+            //init this _mockContext - that would return our mock DbSet of Users
+            _mockContext.SetupGet(c => c.Users).Returns(_mockUsers.Object);
             
             _userService = new UserService(new UnitOfWork());
         }

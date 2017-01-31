@@ -7,8 +7,8 @@
     <ProjectGuid>{639072B3-7206-4939-BC10-39C3A3D64AA0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VivaWallet.DAL</RootNamespace>
-    <AssemblyName>VivaWallet.DAL</AssemblyName>
+    <RootNamespace>ETravel.DAL</RootNamespace>
+    <AssemblyName>ETravel.DAL</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

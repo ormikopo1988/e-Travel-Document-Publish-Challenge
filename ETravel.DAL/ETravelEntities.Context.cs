@@ -9,9 +9,10 @@
 
 namespace ETravel.DAL
 {
+    using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-
+    
     public partial class ETravelEntities : DbContext
     {
         public ETravelEntities()

@@ -5,9 +5,9 @@ namespace ETravel.Common
 {
     public class LoggingService
     {
-        public static void WriteToFile(List<ILoggable> changedItems)
+        public static void WriteToConsole(List<ILoggable> changedItems)
         {
-            foreach(var item in changedItems)
+            foreach (var item in changedItems)
             {
                 Console.WriteLine(item.Log());
             }

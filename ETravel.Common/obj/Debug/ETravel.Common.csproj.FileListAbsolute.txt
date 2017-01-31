@@ -1,4 +1,13 @@
-C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Common\bin\Debug\ETravel.Common.dll
-C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Common\bin\Debug\ETravel.Common.pdb
-C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Common\obj\Debug\ETravel.Common.dll
-C:\Users\ormikopo\Desktop\e-Travel Backend\e-Travel-Document-Publish-Challenge\ETravel.Common\obj\Debug\ETravel.Common.pdb
+C:\Users\ormikopo\Desktop\e-Travel FINAL\E-Travel Assignment Project Deliverables\eTravelBackendFinal\ETravel.Common\bin\Debug\ETravel.Common.dll
+C:\Users\ormikopo\Desktop\e-Travel FINAL\E-Travel Assignment Project Deliverables\eTravelBackendFinal\ETravel.Common\bin\Debug\ETravel.Common.pdb
+C:\Users\ormikopo\Desktop\e-Travel FINAL\E-Travel Assignment Project Deliverables\eTravelBackendFinal\ETravel.Common\obj\Debug\ETravel.Common.dll
+C:\Users\ormikopo\Desktop\e-Travel FINAL\E-Travel Assignment Project Deliverables\eTravelBackendFinal\ETravel.Common\obj\Debug\ETravel.Common.pdb
+C:\Users\ormikopo\Desktop\eTravelFinal\ETravel.Common\bin\Debug\ETravel.Common.dll
+C:\Users\ormikopo\Desktop\eTravelFinal\ETravel.Common\bin\Debug\ETravel.Common.pdb
+C:\Users\ormikopo\Desktop\eTravelFinal\ETravel.Common\obj\Debug\ETravel.Common.dll
+C:\Users\ormikopo\Desktop\eTravelFinal\ETravel.Common\obj\Debug\ETravel.Common.pdb
+C:\Users\ormikopo\Desktop\eTravelFinalDeliveredCaseStudy\ETravel.Common\bin\Debug\ETravel.Common.dll
+C:\Users\ormikopo\Desktop\eTravelFinalDeliveredCaseStudy\ETravel.Common\bin\Debug\ETravel.Common.pdb
+C:\Users\ormikopo\Desktop\eTravelFinalDeliveredCaseStudy\ETravel.Common\obj\Debug\ETravel.Common.csprojResolveAssemblyReference.cache
+C:\Users\ormikopo\Desktop\eTravelFinalDeliveredCaseStudy\ETravel.Common\obj\Debug\ETravel.Common.dll
+C:\Users\ormikopo\Desktop\eTravelFinalDeliveredCaseStudy\ETravel.Common\obj\Debug\ETravel.Common.pdb
